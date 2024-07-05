@@ -1,0 +1,82 @@
+Git commands for VS Code Terminal
+# To copy and use your Git files in local computer using VS Code
+# 1.Open the folder in VS code that your needs to be saved.
+# 2. New teminal 
+    C:\Users\TAMIZH\Documents\GitTamizh> git clone <repositary link or origin link>
+# 3. for changing directory use below command:
+    cd GitRepo
+
+# 4. when you create a new file in your Local folder using VS Code, it will creating a unmodified file or untracked files.
+ --- To know status of that file run the below command
+    git status
+# To track the untracked file:
+    git add <file name>
+# run the status command to check the file is added or not
+    git status
+# the new file is in staging area, to copy this file to our Local git folder, run below:
+    git commit -m "commit message should be wriiten here"
+
+# To copy or push  your file from local folder to Git folder, Run Below
+    git push origin main
+
+ Note: Format for pushing local repositary(Local folder) to Git Repositary(Remote)
+    Insert->Add->Commit->Push
+
+# If you are modifying the file content, then again add the file and commit and then push, see below command:\
+    git status
+    git add <file name>
+    git commit -m "commit message should be wriiten here"
+    git push origin main
+
+# If you are deleting file in the local repositary then it needs updated in Git repositary, for these changes use the same commands above
+    any modifications->Add->Commit->Push
+# for getting latest files from  git repositary to local repositary
+    git pull
+
+
+# CREATING NEW FOLDER: 
+
+creating a new folder and files to the folder.
+    cd .. going backwards to the required folder
+    cd gitlearning changing directory to another folder.
+Covert the folder to git host,
+    git init 
+To add the all the modified files, run below command
+    git add .
+Adding the git repositary the new folder,
+    git remote add origin <repositary link>
+
+To check or know the branch name,
+    git branch
+To update or modify the branch name
+    git branch -m main
+Then check branch name by entring the below command,
+    git branch
+Then push changes to git repositary, by running 
+    git push origin main
+
+For listing the branches in a respositary,
+    git branch -a
+
+To switch one branch to another:
+    git checkout <branch name>
+To know the diff between two branches
+    git diff <required branch name>
+
+To merge one branch to another:
+    git merger <branch name>
+
+After merging we need to push the changes to GIT repositary, then only  we can able to see the changes in GIT
+    git push origin <branch name>
+Creating new branch :
+    git branch <branch name>
+
+Creating Pullrequest in GIT:
+  New pull request
+ Select required branch (main)---> Branch needs to be merged
+
+
+
+
+
+
