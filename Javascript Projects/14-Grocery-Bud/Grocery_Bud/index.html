@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery Bud</title>
+    <!-- font-awesome -->
+    <link 
+      rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" 
+      />
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="section-center">
+      <!-- form -->
+      <form class="grocery-form">
+      <p class="alert"></p>
+      <h3>Grocery list</h3>
+      <div class="form-control">
+        <input type="text" id="grocery" placeholder="e.g.eggs">
+        <button type="submit" class="submit-btn">Save</button>
+      </div>
+      </form>
+      <!-- list -->
+      <div class="grocery-container">
+        <!-- grocery-list -->
+          <div class="grocery-list">
+            <article class="grocery-item">
+              
+            </article>
+          </div>
+      <!-- clear button -->
+        <button type="button" class="clear-btn">Clear items</button>
+      </div>
+    </section>
+    <!-- javascript -->
+    <script src="app.js"></script>
+  </body>
+</html>
