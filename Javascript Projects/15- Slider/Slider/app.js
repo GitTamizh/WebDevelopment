@@ -18,8 +18,10 @@ prevBtn.addEventListener('click', function(){
     carousel()
 });
 
+// function carousel is created to define how the sliding direction will be happens
 function carousel(){
-    // working with slides
+    
+    // working with slides 
     // if(counter === slides.length){
     //     counter = 0;
     // }
@@ -45,3 +47,5 @@ function carousel(){
     });
 }
 prevBtn.style.display = 'none';
+
+// Prevbtn display is to none for hiding the button from the loading page.
