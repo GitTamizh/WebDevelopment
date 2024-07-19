@@ -1,19 +1,42 @@
 import React from 'react'
 import { useState } from 'react';
-const Content = () => {
+import { FaRegTrashAlt } from "react-icons/fa";
 
-    const [name, setName] = useState("Earn");
-        
-    function handleNameChange(){
-        const names = ["give", "grow", "earn", "save", "invest", "split"];
-        const id = Math.floor(Math.random() * names.length);
-        setName(names[id])
-    }
+const Content = () => {
+    const [items, setItems] = useState(
+        [
+            {id:1,
+            checked: true,
+            item: "practice coding"
+            },
+            {id:2,
+            checked: false,
+            item: "playing"
+            },
+            {id:3,
+            checked: false,
+            item: "learning AI"
+            }
+        ])
+    
 
     return (
         <main>
-        <p>Lets {name} money!</p>
-        <button onClick={handleNameChange}>Refresh</button>
+            <ul>
+                {items.map((item) => (
+                    <li className="item" key={item.id}>
+                        <input 
+                        type="checkbox" 
+                        checked = {item.checked}
+                        />
+                        <label>{item.item}</label>
+                        <FaRegTrashAlt 
+                            role = "button"
+                            tabIndex="0"
+                        />
+                    </li>
+                ))}
+            </ul>
         </main>
         
     )
