@@ -5,23 +5,16 @@ import { useState } from 'react';
 import AddItem from './AddItem';
 
 function App() {
-  const [items, setItems] = useState(
-        [
-            {id:1,
-            checked: true,
-            item: "practice coding"
-            },
-            {id:2,
-            checked: false,
-            item: "playing"
-            },
-            {id:3,
-            checked: false,
-            item: "learning AI"
-            }
-        ])
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem("todo_list")))
 
     const [newItem, setNewItem] = useState('')
+    const addItem = (item) => {
+      const id = items.length ? items[items.length - 1].id + 1 : 1 ;
+      const addNewItem = {id,checked: false, item}
+      const listItems = [...items, addNewItem]
+      setItems(listItems)
+      localStorage.setItem("todo_list", JSON.stringify(listItems))
+    }
 
     const handleChange = (id) => {
         const listItems = items.map((item) => 
@@ -41,6 +34,7 @@ function App() {
       e.preventDefault()
       if(!newItem) return;
       console.log("submitted");
+      addItem(newItem)
       setNewItem('')
     }
   return (
