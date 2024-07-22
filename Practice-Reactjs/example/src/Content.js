@@ -4,13 +4,13 @@ import ItemsList from './ItemsList';
 const Content = ({items, handleChange, handleDelete}) => {
 
     return (
-        <main>
-            {(items.length) ? (
-            <ItemsList 
-                items = {items}
-                handleChange = {handleChange}
-                handleDelete = {handleDelete}
-            />
+    <>
+    {(items.length) ? (
+        <ItemsList 
+            items = {items}
+            handleChange = {handleChange}
+            handleDelete = {handleDelete}
+        />
         ) : (
             <p style={
                 {
@@ -20,7 +20,7 @@ const Content = ({items, handleChange, handleDelete}) => {
             }>Your list is empty</p>
         )
     }
-        </main>
+    </>
         
     )
 }
