@@ -2,23 +2,18 @@
   "items": [
     {
       "id": "1",
-      "checked": true,
-      "item": "playing"
+      "checked": false,
+      "item": "palying"
     },
     {
       "id": "2",
       "checked": false,
-      "item": "Running"
+      "item": "learning"
     },
     {
       "id": "3",
       "checked": true,
-      "item": "Learing"
-    },
-    {
-      "id": "31",
-      "checked": true,
-      "item": "hello"
+      "item": "coding"
     }
   ]
 }

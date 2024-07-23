@@ -59,7 +59,7 @@ function App() {
         item.id === id ? {...item, checked:!item.checked} : item)
         setItems(listItems)
         // update a value in API 
-        const myItems = listItems.filter((item) => (item.id === id))
+        const myItems = listItems.filter((item) => item.id === id)
         const updateOptions = {
         method: 'PATCH',
         headers:{
@@ -72,12 +72,15 @@ function App() {
       if(result)setFetchError(result)
     }
 
-    const handleDelete = (id) =>{
+    const handleDelete = async (id) =>{
         const listItems = items.filter((item) => 
         item.id !== id)
         setItems(listItems)
-        // localStorage.setItem("todo_list", JSON.stringify(listItems))
-        
+        // delete a value in Db using APIs
+        const deleteOptions = {method: 'DELETE'}
+        const reqUrl = `${API_URL}/${id}`
+        const result = await apiRequest(reqUrl, deleteOptions)
+        if(result)setFetchError(result)
     }
     const handleSubmit = (e) => {
       e.preventDefault()
