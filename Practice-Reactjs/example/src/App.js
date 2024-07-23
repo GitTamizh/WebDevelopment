@@ -41,8 +41,8 @@ function App() {
       const addNewItem = {id,checked: false, item}
       const listItems = [...items, addNewItem]
       setItems(listItems)
-      // localStorage.setItem("todo_list", JSON.stringify(listItems))
-
+      
+      // create a new item in API
       const postOptions = {
         method: 'POST',
         headers:{
@@ -54,11 +54,22 @@ function App() {
       if(result)setFetchError(result)
     }
 
-    const handleChange = (id) => {
+    const handleChange = async (id) => {
         const listItems = items.map((item) => 
         item.id === id ? {...item, checked:!item.checked} : item)
         setItems(listItems)
-        // localStorage.setItem("todo_list", JSON.stringify(listItems))
+        // update a value in API 
+        const myItems = listItems.filter((item) => (item.id === id))
+        const updateOptions = {
+        method: 'PATCH',
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify({checked:myItems[0].checked})
+      }
+      const reqUrl = `${API_URL}/${id}`
+      const result = await apiRequest(reqUrl, updateOptions)
+      if(result)setFetchError(result)
     }
 
     const handleDelete = (id) =>{

@@ -1,24 +1,24 @@
 {
-    "items": [
-            {
-            "id": "1",
-            "checked": true,
-            "item": "playing"
-            },
-            {
-            "id": "2",
-            "checked": false,
-            "item": "Running"
-            },
-            {
-            "id": "3",
-            "checked": false,
-            "item": "Learing"
-            },
-            {
-            "id": "31",
-            "checked": false,
-            "item": "hello"
-            }
-    ]
+  "items": [
+    {
+      "id": "1",
+      "checked": true,
+      "item": "playing"
+    },
+    {
+      "id": "2",
+      "checked": false,
+      "item": "Running"
+    },
+    {
+      "id": "3",
+      "checked": true,
+      "item": "Learing"
+    },
+    {
+      "id": "31",
+      "checked": true,
+      "item": "hello"
+    }
+  ]
 }
