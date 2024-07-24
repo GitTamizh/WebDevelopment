@@ -1,1 +1,4 @@
-
+button.selected{
+  color: white;
+  background-color: black;
+}
