@@ -223,7 +223,12 @@ body {
 }
 
 .deleteButton {
-  background-color: red;
+  background-color:black;
+  color: white;
+}
+.deleteButton:hover {
+  background-color: rgb(153, 5, 5);
+  color: #000;
 }
 
 .editButton {
