@@ -232,7 +232,13 @@ body {
 }
 
 .editButton {
-  background-color: #333;
+  background-color: #000000;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: #78de7b;
+  color: #000;
 }
 
 .statusMsg {

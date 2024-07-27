@@ -12,6 +12,7 @@ import PostLayout from './PostLayout';
 import { useEffect, useState } from 'react';
 import {format} from 'date-fns'
 import api from './api/posts'
+import EditPost from './EditPost';
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -19,6 +20,8 @@ function App() {
   const [searchPosts, setSearchPosts] = useState([])
   const [postTitle, setPostTitle] = useState('')
   const [postBody, setPostBody] = useState('')
+  const [editTitle, setEditTitle] = useState('')
+  const [editBody, setEditBody] = useState('')
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -65,9 +68,22 @@ function App() {
     }
     
   }
+  const handleEdit = async (id) => {
+    const datetime = format(new Date(), 'MM dd, yyyy pp');
+    const updatedPost = {id, title: editTitle, datetime, body: editBody};
+    try {
+      const response = await api.put(`/posts/${id}`, updatedPost);
+      setPosts(posts.map(post => post.id === id ? {...response.data}:post));
+      setEditTitle('');
+      setEditBody('');
+      navigate("/")
+    } catch (err) {
+      console.log(`Error: ${err.message}`);
+    }
+  }
   const handleDelete = async(id) => {
       try {
-        await api.delete(`posts/${id}`)
+        await api.delete(`/posts/${id}`)
         const postList = posts.filter(post => post.id !== id)
         setPosts(postList)
         navigate("/")
@@ -76,6 +92,7 @@ function App() {
       }
       
   }
+ 
   return (
     <div className="App">
       <Header  title="SnaPost"/>
@@ -95,6 +112,18 @@ function App() {
         />} />
         <Route path=":id" element = {<PostPage  posts= {posts} handleDelete = {handleDelete}/>}/>
       </Route>
+      <Route path="/edit/:id" element = 
+        {
+          <EditPost 
+            posts = {posts}
+            handleEdit = {handleEdit}
+            editTitle = {editTitle}
+            setEditTitle= {setEditTitle}
+            editBody={editBody}
+            setEditBody={setEditBody}
+          />
+        }
+      />
       <Route path="about" element={<About />} />
       <Route path="*" element={<Missing />} />
       </Routes>
