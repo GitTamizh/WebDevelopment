@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "hello",
+      "datetime": "07 27, 2024 2:18:10 PM",
+      "body": "people"
+    },
+    {
+      "id": 2,
+      "title": "lets",
+      "datetime": "07 27, 2024 2:18:29 PM",
+      "body": "work to gethor\n"
+    }
+  ]
+}
