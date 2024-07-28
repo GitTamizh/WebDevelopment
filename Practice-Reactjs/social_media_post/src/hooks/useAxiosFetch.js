@@ -17,7 +17,7 @@ const useAxiosFetch = (dataUrl) => {
                 
                 if(isMounted){
                     setData(response.data);
-                    setFetchError(true);
+                    setFetchError(null);
                 }     
             } catch (err) {
                 if(isMounted){
