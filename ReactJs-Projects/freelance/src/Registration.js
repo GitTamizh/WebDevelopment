@@ -14,7 +14,7 @@ const Registration = () => {
                         <label htmlFor="fullName">Full Name</label>
                         <input 
                             type="text" 
-                            name="Name" 
+                            name="name"
                             id="name"
                             required
                         />
@@ -33,7 +33,7 @@ const Registration = () => {
                         <input 
                             type="text" 
                             id="username" 
-                            name="username" 
+                            name="userName" 
                             required
                         />
                         </div>
