@@ -1,48 +1,48 @@
 import React, { useEffect, useState } from 'react'
 import Logo from "./imges/Logo.svg"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios";
 
     const Login = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState(null);
-    const [success, setSuccess] = useState("");
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
     const [loading, setLoading] = useState(false)
-
+    const {navigate} = useNavigate()
     useEffect(() => {});
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        // checking inputs in email and password
-        try {
-            const response = await axios.post(
-                "http://localhost:8080/users/userLogin", {
-                    email, 
-                    password}
-            );
-            setSuccess(response.data)
-        } catch (err) {
-            setError(`Error: ${err.message}`)
-        }finally{
-            setLoading(false)
-        }
-        
-        if (!email || !password) {
-        setError("Both fields are required");
-        return;
-        }
+          e.preventDefault();
+          setError("");
+          setLoading(true);
 
-        // checking the email and passwords are correct?
-        if (email && password) {
-        setSuccess("Login Succesfull!");
-        setError("");
-        } else {
-        setError("Invalid email or Password...");
-        setSuccess("");
-        }
-    };
+          if (!email || !password) {
+            setError("Please fill in both fields.");
+            setLoading(false);
+            return;
+          }
+      try {
+      const response = await axios.post('http://localhost:8080/users/userLogin', {
+        email,
+        password
+      });
+
+      if (response.data.message === "Login successful!") {
+        <Link to="/homePage">Home</Link>;
+        // Handle successful login here
+      } else {
+        console.error("Login failed:", response.data.message);
+      }
+    } catch (err) {
+      setError(error.response ? error.response.data.message : error.message);
+    } finally {
+      setLoading(false);
+    }
+ 
+        
+  };
+
     return (
       <section>
         <div className="logo">
@@ -51,15 +51,13 @@ import axios from "axios";
         <div className="login-container">
           {error && <p className="login-error">{error}</p>}
           {success && <p className="login-success">{success}</p>}
-          <form
-            action="http://localhost:8080/users/userLogin"
-            method="post"
-            className="login"
+          <form className="login"
             onSubmit={handleSubmit}
           >
             <div className="input-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="email">UserName</label>
               <input
+                autoComplete='email'
                 type="email"
                 id="email"
                 value={email}
