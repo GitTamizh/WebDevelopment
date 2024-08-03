@@ -9,8 +9,24 @@ import axios from "axios";
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const [loading, setLoading] = useState(false)
-    const {navigate} = useNavigate()
-    useEffect(() => {});
+    const navigate = useNavigate()
+
+    // useEffect(() => {
+    //   const checkAuthentication = async () => {
+    //   try {
+    //     const response = await axios.get('http://localhost:8080/users/checkAuth', { withCredentials: true });
+    //     if (!response.data.isAuthenticated) {
+    //       navigate('/login');
+    //     }
+    //   } catch (error) {
+    //     setError("Error checking authentication.");
+    //     navigate('/login');
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // };
+    //   checkAuthentication();
+    // }, [navigate]);
 
     const handleSubmit = async (e) => {
           e.preventDefault();
@@ -28,18 +44,21 @@ import axios from "axios";
         password
       });
 
-      if (response.data.message === "Login successful!") {
-        <Link to="/homePage">Home</Link>;
-        // Handle successful login here
-      } else {
-        console.error("Login failed:", response.data.message);
+        if (response.data.message === "Login successfull !") {
+          setSuccess("Login successful");
+          setTimeout(() => {
+            navigate("/homePage");
+          }, 1000); // Delay for 1 seconds
+        } else {
+          setError(response.data.message || "Login failed.");
+        }
+      } catch (err) {
+        setError(
+          err.response?.data?.message || err.message || "An error occurred."
+        );
+      } finally {
+        setLoading(false);
       }
-    } catch (err) {
-      setError(error.response ? error.response.data.message : error.message);
-    } finally {
-      setLoading(false);
-    }
- 
         
   };
 
@@ -80,7 +99,6 @@ import axios from "axios";
             <div className="loginPagebtns">
             <button type="submit" disabled={loading}>
                 {loading ? "Logging in..." : "Login"}
-                <Link to="/homePage"></Link>
               </button>
             </div>
           </form>
