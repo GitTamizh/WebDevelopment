@@ -11,7 +11,7 @@ const Home = () => {
             online presence or streamline your digital operations, we’ve got you
             covered.
             </p>
-            <h1>Our Expertise:</h1>
+            {/* <h1>Our Expertise:</h1>
             <p>
             Custom Website Development: From sleek, professional portfolios to
             dynamic e-commerce platforms, we design and develop websites that not
@@ -33,7 +33,7 @@ const Home = () => {
             The Coder’s Bay, we believe in a personalized approach. We take the
             time to understand your specific needs and provide solutions that
             align with your goals.
-            </p>
+            </p> */}
         </div>
     );
 }

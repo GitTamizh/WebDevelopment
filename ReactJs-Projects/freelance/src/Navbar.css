@@ -1,0 +1,50 @@
+/* Base styles for Navbar */
+.navbar {
+    background: #222;
+    /* Dark background for dark mode */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    /* Max width for larger screens */
+    margin: 0 auto;
+    /* Center align the navbar container */
+}
+
+.navbar-logo {
+    color: #fff;
+    /* Light text color for logo */
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    margin: 0 15px;
+}
+
+.navbar-links {
+    color: #ddd;
+    /* Light gray text color for links */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar-links:hover {
+    color: #fff;
+    /* Change link color on hover */
+    text-decoration: underline;
+}
