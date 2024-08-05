@@ -15,7 +15,9 @@ import Contact from "./Contact";
 const Layout = () => (
   <div>
     <Navbar />
-    <Outlet /> 
+    <main>
+      <Outlet />
+    </main>
   </div>
 );
 
@@ -30,8 +32,6 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/sign-up" element={<Registration />} />
-      </Routes>
-      <Routes>
         <Route element={<Layout />}>
           <Route path="/homePage" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -39,6 +39,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
+
     </div>
   );
 }

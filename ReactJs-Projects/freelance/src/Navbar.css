@@ -1,50 +1,94 @@
-/* Base styles for Navbar */
+/* Navbar.css */
+
+/* Ensure the Navbar is at the top and spans the full width */
 .navbar {
-    background: #222;
-    /* Dark background for dark mode */
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+    background-color: rgb(44, 42, 42);
+    /* Dark background for the navbar */
+    padding: 10px 20px;
+    /* Padding for the navbar */
+    position: fixed;
+    /* Fixes the navbar to the top */
+    top: 0;
+    /* Aligns the navbar to the top of the viewport */
+    left: 0;
+    /* Aligns the navbar to the left edge of the viewport */
+    width: 100%;
+    /* Ensures the navbar spans the full width of the viewport */
+    z-index: 1000;
+    /* Places the navbar above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Optional shadow for better visibility */
 }
 
 .navbar-container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    /* Space between the logo and menu */
+    align-items: center;
+    /* Center items vertically */
     max-width: 1200px;
-    /* Max width for larger screens */
+    /* Limit the maximum width of the navbar */
     margin: 0 auto;
-    /* Center align the navbar container */
+    /* Center the navbar */
 }
 
-.navbar-logo {
-    color: #fff;
-    /* Light text color for logo */
-    font-size: 24px;
-    text-decoration: none;
-    font-weight: bold;
+.navbar-logo img {
+    height: 50px;
+    /* Adjust logo height as needed */
+    width: auto;
+    /* Maintain aspect ratio */
 }
 
 .navbar-menu {
     list-style: none;
-    display: flex;
+    /* Remove default list styling */
     margin: 0;
     padding: 0;
+    display: flex;
+    /* Display menu items in a row */
 }
 
 .navbar-item {
-    margin: 0 15px;
+    margin-left: 20px;
+    /* Space between menu items */
 }
 
 .navbar-links {
-    color: #ddd;
-    /* Light gray text color for links */
+    color: #fff;
+    /* White text color */
     text-decoration: none;
-    font-size: 18px;
+    /* Remove underline */
+    font-size: 16px;
+    /* Font size for menu items */
+    transition: color 0.3s ease;
+    /* Smooth transition for hover effect */
 }
 
 .navbar-links:hover {
-    color: #fff;
-    /* Change link color on hover */
-    text-decoration: underline;
+    color: #1e732fe2;
+    /* Change color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        /* Stack logo and menu vertically on smaller screens */
+        align-items: flex-start;
+        /* Align items to the start of the container */
+    }
+
+    .navbar-menu {
+        margin-top: 10px;
+        /* Space between logo and menu on small screens */
+        flex-direction: column;
+        /* Stack menu items vertically */
+    }
+
+    .navbar-item {
+        margin-left: 0;
+        /* Remove left margin for menu items on small screens */
+        margin-bottom: 10px;
+        /* Space between menu items on small screens */
+    }
 }
