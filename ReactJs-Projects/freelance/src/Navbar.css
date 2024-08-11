@@ -2,7 +2,7 @@
 
 /* Ensure the Navbar is at the top and spans the full width */
 .navbar {
-    background-color: rgb(44, 42, 42);
+    background-color: rgb(13, 13, 13);
     /* Dark background for the navbar */
     padding: 10px 20px;
     /* Padding for the navbar */
@@ -49,7 +49,7 @@
 }
 
 .navbar-item {
-    margin-left: 20px;
+    margin-left: 30px;
     /* Space between menu items */
 }
 
@@ -91,4 +91,173 @@
         margin-bottom: 10px;
         /* Space between menu items on small screens */
     }
+}
+
+.profile-container {
+    display:flex;
+    flex-direction:row;
+    margin: 0 78.125rem;
+    padding: 0px;
+    /* max-width: 1200px; */
+    position: absolute;
+}
+
+.profile-SignOut{
+    display: flex;
+    flex-direction: row;
+    margin: 0 83rem;
+    padding: 0px;
+    /* max-width: 1200px; */
+    position: absolute;
+}
+
+
+/* Sidebar styling */
+.profile-sidebar {
+    width:auto;
+    background-color: rgb(225, 216, 225);
+    /* padding: 20px; */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+    border-radius: 32px;
+}
+.profile-SignOut [type=submit]{
+    /* width:auto; */
+    background-color: #000000c7;
+    /* padding: 20px; */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.profile-sidebar button {
+    display: flex;
+    /* margin: 0 auto 20px; */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+.profile-sidebar button:hover {
+    display: flex;
+    /* margin: 0 auto 20px; */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1e732fe2;
+}
+.profile-SignOut button:hover {
+    display: flex;
+    /* margin: 0 auto 20px; */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #e12611e2;
+}
+
+.profile-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-sidebar ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-sidebar ul li:hover {
+    background-color: #e0e0e0;
+}
+
+/* Main profile content styling */
+.profile-main {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-main h1 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+.profile-main p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+
+    .profile-sidebar {
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .profile-main {
+        border: none;
+        border-radius: 0;
+    }
+}
+
+
+/* Sidebar button styling */
+.profile-sidebar .dropdown-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    width: auto;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+/* Dropdown menu styling */
+.profile-sidebar .dropdown-menu {
+    display: none;
+    /* Hidden by default */
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+    background-color: #5c5d5f;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    width: auto;
+    top: 60px;
+    /* Adjust based on button height */
+    left: 0;
+    z-index: 1000;
+}
+
+.profile-sidebar .dropdown-menu.show {
+    display: block;
+}
+
+.profile-sidebar .dropdown-menu li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e9ecef;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-sidebar .dropdown-menu li:hover {
+    background-color: black;
+    color: #1e732fe2;
 }

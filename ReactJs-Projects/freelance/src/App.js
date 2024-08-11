@@ -10,6 +10,7 @@ import Home from "./Home";
 import About from "./About";
 import Services from "./Services";
 import Contact from "./Contact";
+// import Profile from "./Profile/Profile.Jsx";
 
 
 const Layout = () => (
@@ -37,8 +38,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          
         </Route>
-      </Routes>
+          {/* <Route path="/profile" element={<Profile />} /> */}
+      </Routes >
 
     </div>
   );

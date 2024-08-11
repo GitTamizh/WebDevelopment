@@ -46,9 +46,7 @@ import axios from "axios";
 
         if (response.data.message === "Login successfull !") {
           setSuccess("Login successful");
-          setTimeout(() => {
             navigate("/homePage");
-          }, 1000); // Delay for 1 seconds
         } else {
           setError(response.data.message || "Login failed.");
         }
