@@ -7,9 +7,9 @@ import { useEffect } from "react";
 const Dashboard = () => {
   const { user } = useUser(); // Access the user data from context
 
-    if (!user) {
-        return <p>Please log in to view the dashboard.</p>;
-    }
+    // if (!user) {
+    //     return <p>Please log in to view the dashboard.</p>;
+    // }
 
     return (
         <div className="dashboard">

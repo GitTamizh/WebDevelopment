@@ -31,10 +31,10 @@ import { useUser } from './UserContext';
     //   checkAuthentication();
     // }, [navigate]);
 
-    const handleLogin = async () => {
-      const userData = await authenticateUser(); 
-      setUser(userData); 
-    };
+    // const handleLogin = async () => {
+    //   const userData = await authenticateUser(); 
+    //   setUser(userData); 
+    // };
 
     const handleSubmit = async (e) => {
           e.preventDefault();
@@ -89,7 +89,7 @@ import { useUser } from './UserContext';
                 autoComplete="email"
                 type="email"
                 id="email"
-                value={(email, username)}
+                value={(email)}
                 placeholder="Username or email"
                 onChange={(e) => setEmail(e.target.value)}
                 required
