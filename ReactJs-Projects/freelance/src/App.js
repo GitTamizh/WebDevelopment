@@ -10,6 +10,9 @@ import Home from "./Home";
 import About from "./About";
 import Services from "./Services";
 import Contact from "./Contact";
+import Dashboard from "./Dashboard";
+import UserList from "./UserList"
+import EditUser from "./EditUser";
 const Layout = () => (
   <div>
     <Navbar />
@@ -18,9 +21,6 @@ const Layout = () => (
     </main>
   </div>
 );
-
-
-
 
 function App() {
   return (
@@ -35,11 +35,12 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
-          
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/userList" element={<UserList />} />
+          <Route path="/editUser/:id" element={<EditUser />} />
         </Route>
-          {/* <Route path="/profile" element={<Profile />} /> */}
-      </Routes >
-
+        {/* <Route path="/profile" element={<Profile />} /> */}
+      </Routes>
     </div>
   );
 }

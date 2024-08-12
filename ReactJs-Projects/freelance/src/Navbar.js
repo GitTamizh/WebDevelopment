@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo1 from "./imges/Logo1.svg"
 import { useState } from 'react';
 import { FaUserAlt } from 'react-icons/fa';
@@ -12,11 +12,26 @@ import "./Navbar.css";
 const Navbar = () => {
 
     const [isDropdownOpen, setDropdownOpen] = useState(false);
-    const { user } = useUser();
+    const { user, signOut } = useUser();
+    const navigate = useNavigate();
     console.log('Current user:', user); // Debug line
+
     const toggleDropdown = () => {
         setDropdownOpen((prevState) => !prevState);
+
     };
+    const handleSignOut = () => {
+        const confirmSignOut = window.confirm("Do you really want to sign out?");
+        if (confirmSignOut) {
+            if (typeof signOut === 'function') {
+                    signOut(); 
+                    navigate('/');
+                } else {
+                    console.error("signOut is not a function");
+                }
+            }
+        }
+
     return (
         <nav className="navbar">
             <div className="navbar-container">
@@ -59,15 +74,14 @@ const Navbar = () => {
                     <br />
                     <li>{user ? user.name : 'Guest'}</li>
                     {/* {console.log(user.name)} */}
-                    <br />
-                    <li><Link to='/dashboard'>Dashbord</Link></li>
+                    <li><Link to='/dashboard' className="profile-links">Dashbord</Link></li>
                     <li>Settings</li>
                     <li>Activity</li>
                 </ul>
                 </div>
             </div>
             <div className="profile-SignOut">
-                <button type="submit">
+                <button type="button" onClick={handleSignOut}>
                 <FaSignOutAlt />
                 </button>
             </div>

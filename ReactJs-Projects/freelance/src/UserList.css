@@ -1,0 +1,73 @@
+/* UsersList.css */
+
+/* Main container styles */
+.users-list {
+    padding-top: 5%;
+    height: auto;
+    width: 180vh;
+    background-color: #000000;
+    box-sizing: border-box;
+}
+
+/* Header styles */
+.users-list h1 {
+    padding-top: 10%;
+    font-size: 2rem;
+    color: #607244;
+    margin-bottom: 20px;
+}
+
+/* Table styles */
+.users-list table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: #302f2f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ensures the border-radius applies correctly */
+}
+
+.users-list thead {
+    background-color: #363636;
+}
+
+.users-list th,
+.users-list td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px light #fcfcfc;
+}
+
+.users-list th {
+    color: #629314;
+}
+
+.users-list tr:nth-child(even) {
+    background-color: #323232;
+}
+
+.users-list tr:hover {
+    color: #607244;
+}
+
+/* Button styles */
+.users-list .button-edit .button-delete  button{
+    background-color: none;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.users-list .button-delete:hover {
+    background-color: black;
+    color: #ef0c0c;
+}
+.users-list .button-edit:hover {
+    background-color: black;
+    color: #1ca8db;
+}

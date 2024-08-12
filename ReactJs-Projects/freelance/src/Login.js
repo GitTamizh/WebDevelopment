@@ -12,22 +12,29 @@ import { useUser } from './UserContext';
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
     const { setUser } = useUser(); 
+
+
     // useEffect(() => {
     //   const checkAuthentication = async () => {
     //   try {
     //     const response = await axios.get('http://localhost:8080/users/checkAuth', { withCredentials: true });
     //     if (!response.data.isAuthenticated) {
-    //       navigate('/login');
+    //       navigate('/home');
     //     }
     //   } catch (error) {
     //     setError("Error checking authentication.");
-    //     navigate('/login');
+    //     navigate('/');
     //   } finally {
     //     setLoading(false);
     //   }
     // };
     //   checkAuthentication();
     // }, [navigate]);
+
+    const handleLogin = async () => {
+      const userData = await authenticateUser(); 
+      setUser(userData); 
+    };
 
     const handleSubmit = async (e) => {
           e.preventDefault();
@@ -75,16 +82,14 @@ import { useUser } from './UserContext';
         <div className="login-container">
           {error && <p className="login-error">{error}</p>}
           {success && <p className="login-success">{success}</p>}
-          <form className="login"
-            onSubmit={handleSubmit}
-          >
+          <form className="login" onSubmit={handleSubmit}>
             <div className="input-group">
               <label htmlFor="email">UserName</label>
               <input
-                autoComplete='email'
+                autoComplete="email"
                 type="email"
                 id="email"
-                value={email}
+                value={(email, username)}
                 placeholder="Username or email"
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -102,7 +107,7 @@ import { useUser } from './UserContext';
               />
             </div>
             <div className="loginPagebtns">
-            <button type="submit" disabled={loading}>
+              <button type="submit" disabled={loading}>
                 {loading ? "Logging in..." : "Login"}
               </button>
             </div>
