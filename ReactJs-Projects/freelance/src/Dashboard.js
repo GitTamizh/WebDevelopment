@@ -13,7 +13,7 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard">
-        <h1>Welcome, {user.name}!</h1>
+        {/* <h1>Welcome, {user.name}!</h1> */}
         <p>
             Here is your dashboard where you can view your activities, settings, and
             more.
