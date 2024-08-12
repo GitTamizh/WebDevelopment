@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Logo from "./imges/Logo.svg"
 import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios";
+import { useUser } from './UserContext';
 
     const Login = () => {
     const [email, setEmail] = useState('');
@@ -10,7 +11,7 @@ import axios from "axios";
     const [success, setSuccess] = useState('');
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
-
+    const { setUser } = useUser(); 
     // useEffect(() => {
     //   const checkAuthentication = async () => {
     //   try {
@@ -39,14 +40,20 @@ import axios from "axios";
             return;
           }
       try {
-      const response = await axios.post('http://localhost:8080/users/userLogin', {
-        email,
-        password
-      });
-
+        const response = await axios.post(
+          "http://localhost:8080/users/userLogin",
+          {
+            email,
+            password,
+          }
+        );
+        console.log("Login response data:", response.data); // Check response data
         if (response.data.message === "Login successfull !") {
+          const userData = response.data.user;
+          setUser(userData);
+          console.log("User set:", userData);
           setSuccess("Login successful");
-            navigate("/homePage");
+          navigate("/homePage");
         } else {
           setError(response.data.message || "Login failed.");
         }

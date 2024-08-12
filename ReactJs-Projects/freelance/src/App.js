@@ -10,9 +10,6 @@ import Home from "./Home";
 import About from "./About";
 import Services from "./Services";
 import Contact from "./Contact";
-// import Profile from "./Profile/Profile.Jsx";
-
-
 const Layout = () => (
   <div>
     <Navbar />

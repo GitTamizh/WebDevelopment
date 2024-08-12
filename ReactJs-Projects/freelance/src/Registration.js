@@ -4,8 +4,10 @@ import "./Register.css"
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
+import { useUser } from "./UserContext";
 
 const Registration = () => {
+    const { setUser } = useUser();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("")
     const [mobile, setMobile] = useState("");
@@ -39,6 +41,7 @@ const Registration = () => {
 
             setSuccess(response.data.message);
             if(response.data.message === "Sign Up Successfull"){
+                setUser({ name: name, userName: userName });
             setTimeout(() => {
                 navigate("/");
               }, 1000); // Delay for 1 seconds

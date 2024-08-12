@@ -2,14 +2,18 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import Logo1 from "./imges/Logo1.svg"
 import { useState } from 'react';
-// import {<FaUserAlt}
 import { FaUserAlt } from 'react-icons/fa';
 import { FaSignOutAlt } from "react-icons/fa";
+import { useUser } from "./UserContext";
 import "./Navbar.css"; 
-const Navbar = ({name}) => {
+
+
+
+const Navbar = () => {
 
     const [isDropdownOpen, setDropdownOpen] = useState(false);
-
+    const { user } = useUser();
+    console.log('Current user:', user); // Debug line
     const toggleDropdown = () => {
         setDropdownOpen((prevState) => !prevState);
     };
@@ -52,8 +56,11 @@ const Navbar = ({name}) => {
                     <FaUserAlt />
                 </button>
                 <ul className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}>
-                    <li><p>{name}</p></li>
-                    <li>Dashbord</li>
+                    <br />
+                    <li>{user ? user.name : 'Guest'}</li>
+                    {/* {console.log(user.name)} */}
+                    <br />
+                    <li><Link to='/dashboard'>Dashbord</Link></li>
                     <li>Settings</li>
                     <li>Activity</li>
                 </ul>
