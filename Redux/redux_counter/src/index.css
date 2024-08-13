@@ -212,3 +212,29 @@ main {
   color: var(--clr-white);
   background: var(--clr-black);
 }
+.button-container{
+  text-align: center;
+}
+
+input[type=text]{
+  padding: 0.5rem;
+    /* Padding for text input */
+    width: 50%;
+    /* Width of the input box */
+    height: 2.5rem;
+    /* Height for better usability */
+    font-size: 20px;
+    /* Font size */
+    text-align: center;
+    /* Centered text */
+    border: 2px solid var(--clr-grey-4);
+    /* Border color */
+    border-radius: var(--radius);
+    /* Rounded corners */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+    margin: 0 auto;
+    /* Center the input horizontally */
+    justify-content: center;
+}
+
