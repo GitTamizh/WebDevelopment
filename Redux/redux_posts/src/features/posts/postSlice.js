@@ -10,6 +10,11 @@ const initialState = [
         id: "2",
         title: "Asychronous Javascript",
         content: "Learned about promises, async and await"
+    },
+    {
+        id: "3",
+        title: "snowflake",
+        content: "working as a developer"
     }
 ]
 
@@ -21,12 +26,13 @@ const postSlice = createSlice({
             reducer(state, action) {
                 state.push(action.payload)
             },
-            prepare(title, content){
+            prepare(title, content, userId){
                 return{
                     payload:{
                         id: nanoid(),
                         title,
-                        content
+                        content,
+                        userId
                     }
                 }
             }
