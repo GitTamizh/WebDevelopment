@@ -589,7 +589,7 @@ footer p {
 .sidebar-toggle {
   position: fixed;
   top: 1rem;
-  left: 1rem;
+  left: 0.5rem;
   /* Adjusted to position the button on the left side */
   font-size: 2rem;
   background: transparent;
