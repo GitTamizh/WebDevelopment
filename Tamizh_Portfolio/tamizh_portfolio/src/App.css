@@ -588,8 +588,8 @@ footer p {
 /* Sidebar toggle button styling */
 .sidebar-toggle {
   position: fixed;
-  top: 2rem;
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
   /* Adjusted to position the button on the left side */
   font-size: 2rem;
   background: transparent;
