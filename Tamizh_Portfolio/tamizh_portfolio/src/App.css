@@ -588,13 +588,13 @@ footer p {
 /* Sidebar toggle button styling */
 .sidebar-toggle {
   position: fixed;
-  top: 1rem;
+  top: 2rem;
   left: 0.5rem;
   /* Adjusted to position the button on the left side */
   font-size: 2rem;
   background: transparent;
   border: none;
-  color: black;
+  color: var(--clr-black);
   transition: color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
   animation: bounce 2s ease-in-out infinite;
