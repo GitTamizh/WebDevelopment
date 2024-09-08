@@ -26,7 +26,7 @@ const AboutSection = () => (
             <p>
                 I'm <strong>Tamizharasu P</strong>, a React developer and Front End Developer.
                 I'm a Graduate with Mechanical Engineering as Majors from <strong>Chennai Institue of Teachnology</strong>
-                , Chennai india. I have been developing Front-end websites for over 2 years now. I have worked with cross-functional teams to deliver high-quality, scalable, and maintainable code.. Currently working as Front-end Developer at Tata Consultancy Services
+                , Chennai india. I have been developing Front-end websites for over 2 years now. I have worked with cross-functional teams to deliver high-quality, scalable, and maintainable code.. Currently working as Front-end Developer at Tata Consultancy Services
             </p>
             </div>
         </div>
