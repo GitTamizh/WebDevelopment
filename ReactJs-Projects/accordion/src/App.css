@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.accordion {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  border: 1px solid #ffffff;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
+
+.accordion-header {
+  background-color: #05e5fa;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.accordion-content {
+  padding: 15px;
+  display: block;
+  overflow: hidden;
+  background-color: #b8f9ff;
+  transition: max-height 0.3s ease-out;
+  border-radius: 8px;
+}
+
+button{
+  padding: 5px;
+  margin: 10px;
+  display: inline-flex;
+  background-color: rgb(171, 247, 171);
+  border-radius: 8px;
+}
