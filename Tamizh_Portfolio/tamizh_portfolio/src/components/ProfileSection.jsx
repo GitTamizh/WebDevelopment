@@ -32,7 +32,7 @@ const ProfileSection = () => {
 
         return () => clearTimeout(pauseTimer);
         }
-    }, [charIndex, phraseIndex, phrases]);
+    }, [charIndex, phraseIndex]);
 
     return (
         <section id="profile">
