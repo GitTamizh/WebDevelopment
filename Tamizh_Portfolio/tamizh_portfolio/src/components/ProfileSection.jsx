@@ -14,7 +14,7 @@ const ProfileSection = () => {
 
     useEffect(() => {
         const typingSpeed = 100; // Speed of typing
-        const erasingSpeed = 50; // Speed of erasing
+        // const erasingSpeed = 50; // Speed of erasing
         const pauseDuration = 2000; // Pause between phrases
 
         if (charIndex <= phrases[phraseIndex].length) {
@@ -32,12 +32,12 @@ const ProfileSection = () => {
 
         return () => clearTimeout(pauseTimer);
         }
-    }, [charIndex, phraseIndex]);
+    }, [charIndex, phraseIndex, phrases]);
 
     return (
         <section id="profile">
         <div className="section__pic-container">
-            <img src="/assets/profile-pic.png" alt="Tamizharasu P profile picture" />
+            <img src="/assets/profile-pic.png" alt="Tamizharasu P profile" />
         </div>
         <div className="section__text">
             <p className="section__text__p1">Hello, I'm</p>
