@@ -36,7 +36,7 @@ const ProfileSection = () => {
     return (
         <section id="profile">
             <div className="section__pic-container">
-                <img src="/assets/profile-pic.png" alt="Tamizharasu P profile" />
+                <img src="/assets/profile-pic.svg" alt="Tamizharasu P profile" />
             </div>
             <div className="section__text">
                 <p className="section__text__p1">Hello, I'm</p>

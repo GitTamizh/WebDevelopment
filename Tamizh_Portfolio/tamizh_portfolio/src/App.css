@@ -512,7 +512,11 @@ footer p {
   font-size: 1.5rem;
   /* Adjust based on your design */
 }
-
+.sidebar-logo{
+  display: flex;
+  align-items:center;
+  font-size: 1.5rem;
+}
 .developer-icon {
   margin-left: 8px;
   /* Adjust spacing between text and icon */

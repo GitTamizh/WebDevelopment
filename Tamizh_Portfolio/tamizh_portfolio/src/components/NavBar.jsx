@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaCode, FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
 
+
 const NavBar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -17,8 +18,7 @@ const NavBar = () => {
             {/* Desktop Navbar */}
             <nav id="desktop-nav">
                 <div className="logo">
-                    Tamizh
-                    <FaCode className="developer-icon" />
+                    <img src="/assets/Tamizh.svg" alt="Tamizh" />
                 </div>
                 <ul className="nav-links">
                     <li><a href="#about">About</a></li>
@@ -42,9 +42,8 @@ const NavBar = () => {
             {/* Mobile Sidebar */}
             <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
                 <div className="sidebar-header">
-                    <div className="logo">
-                        Tamizh
-                        <FaCode className="developer-icon" />
+                    <div className="sidebar-logo">
+                        <img src="/assets/Tamizh-logo.svg" alt="Tamizh" />
                     </div>
                     <button className="close-btn" onClick={toggleSidebar}>
                         <FaTimes />
