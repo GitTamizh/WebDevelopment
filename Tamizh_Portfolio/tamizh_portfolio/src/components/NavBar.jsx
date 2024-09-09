@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaCode, FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 
 const NavBar = () => {
