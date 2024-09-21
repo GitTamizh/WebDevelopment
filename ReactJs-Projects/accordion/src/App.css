@@ -8,7 +8,7 @@ h1 {
 }
 
 .accordion {
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -34,12 +34,13 @@ h1 {
   background-color: #b8f9ff;
   transition: max-height 0.3s ease-out;
   border-radius: 8px;
+  height: 100px;
 }
 
 button{
   padding: 5px;
   margin: 10px;
   display: inline-flex;
-  background-color: rgb(171, 247, 171);
+  background-color: rgb(140, 242, 140);
   border-radius: 8px;
 }
